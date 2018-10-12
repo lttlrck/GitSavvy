@@ -46,11 +46,40 @@ contexts:
   section:
     - match: ^$
       pop: true
-    - match: ^( ([ 0-9smMYhdw]*)  .+)\n$
+    - match: ^( ([ 0-9s]+)  .+)\n$
       captures:
           0: meta.git-savvy.status.file
           1: gitsavvy.gotosymbol
-    - match: ^( ([ 0-9smMYhdw]*) (-) (.+))\n$
+    - match: ^( ([ 0-9m]+)  .+)\n$
+      scope: constant.other.symbol
+      captures:
+          0: meta.git-savvy.status.file
+          1: gitsavvy.gotosymbol
+    - match: ^( ([ 0-9h]+)  .+)\n$
+      scope: entity.name.class
+      captures:
+          0: meta.git-savvy.status.file
+          1: gitsavvy.gotosymbol
+    - match: ^( ([ 0-9dwMY]*)  .+)\n$
+      scope: entity.name.tag
+      captures:
+          0: meta.git-savvy.status.file
+          1: gitsavvy.gotosymbol
+    - match: ^( ([ 0-9s]+) (-) (.+))\n$
+      captures:
+          0: meta.git-savvy.status.file
+          1: gitsavvy.gotosymbol
+    - match: ^( ([ 0-9m]+) (-) (.+))\n$
+      scope: constant.other.symbol
+      captures:
+          0: meta.git-savvy.status.file
+          1: gitsavvy.gotosymbol
+    - match: ^( ([ 0-9h]+) (-) (.+))\n$
+      scope: entity.name.class
+      captures:
+          0: meta.git-savvy.status.file
+          1: gitsavvy.gotosymbol
+    - match: ^( ([ 0-9dwMY]*) (-) (.+))\n$
       captures:
           0: meta.git-savvy.status.file
           1: gitsavvy.gotosymbol
